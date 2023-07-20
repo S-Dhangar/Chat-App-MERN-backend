@@ -149,7 +149,7 @@ const server = app.listen(PORT,()=>{
 })
 const io = socket(server, {
     cors: {
-      origin: 'http://localhost:3001', // Replace with your frontend URL
+      origin: 'https://chat-app-orpin-xi.vercel.app', // Replace with your frontend URL
       methods: ['GET', 'POST'],
      
     },
