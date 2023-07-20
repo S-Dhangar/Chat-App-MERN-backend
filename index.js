@@ -5,7 +5,22 @@ const socket = require('socket.io');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+
+const allowedOrigins = ['http://localhost:3001', 'http://example.com'];
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+
+app.use(cors(corsOptions));
+
+
 
 const dotenv = require('dotenv');
 const User = require('./models/User');
