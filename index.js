@@ -160,7 +160,7 @@ const server = app.listen(PORT,()=>{
 })
 const io = socket(server, {
     cors: {
-      origin: 'http://localhost:3000', // Replace with your frontend URL
+      origin: 'http://localhost:3001', // Replace with your frontend URL
       methods: ['GET', 'POST'],
      
     },
